@@ -1,9 +1,9 @@
 # .NET 7 .gitignore file
 
 ## Build Folders
-# bin/
-# obj/
-# out/
+bin/
+obj/
+out/
 
 ## User-specific files
 *.rsuser
