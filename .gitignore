@@ -1,0 +1,89 @@
+# .NET 7 .gitignore file
+
+## Build Folders
+# bin/
+# obj/
+# out/
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## VS Code directories
+.vscode/
+*.code-workspace
+
+## Rider
+.idea/
+
+## User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+## Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+## Folder config file
+Desktop.ini
+
+## Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Windows thumbnail cache files
+._*
+
+## Windows auto-generated files
+Thumbs.db
+ehthumbs.db
+
+## JetBrains Rider
+.idea/
+*.sln.iml
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## NuGet
+*.nupkg
+# Exclude explicitly-versioned packages
+# NuGet v3
+/.nuget/packages/
+# NuGet v2
+/packages/
+
+## Other files and folders
+*.swp
+*.bak
+*.swx
+*.log
+*.sqlite
+
+## Logs and databases
+*.log
+*.sql
+*.sqlite
+
+## OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+## Project-specific ignores
+# Uncomment the next line to ignore your web deploy settings.
+# But make sure to never ignore web.config when it's part of the project.
+# web*.config
+
+# Azure DevOps
+.azure/
