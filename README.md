@@ -7,8 +7,9 @@
 ~ dotnet run --environment "Development"
 
 #BUILD
-~ dotnet restore
 ~ dotnet build
 
-#RUN
+#RUN 
+~ dotnet restore
+~ dotnet dev-certs https --trust 
 ~ dotnet run
