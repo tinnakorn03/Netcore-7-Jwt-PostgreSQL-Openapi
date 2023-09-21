@@ -1,15 +1,29 @@
+using Microsoft.AspNetCore.HttpsPolicy;
 using System.Text.Json.Serialization;
 using NetcoreJwtJsonbOpenapi.Authorization;
 using NetcoreJwtJsonbOpenapi.Helpers;
 using NetcoreJwtJsonbOpenapi.Services;
 using NetcoreJwtJsonbOpenapi.Repositories;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+
+Environment.SetEnvironmentVariable("ASPNETCORE_HTTPS_PORT", "7147");
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenLocalhost(7147, listenOptions =>
+    {
+        listenOptions.UseHttps();
+    });
+});
 
 // Add services to the container.
 builder.Services.AddCors();
 builder.Services.AddControllers();
- 
+builder.Services.AddHttpsRedirection(options =>
+{
+    options.HttpsPort = 7147;
+});
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings")); 
 builder.Services.AddSingleton<DataContext>();
@@ -74,7 +88,7 @@ app.UseCors(x => x
     .AllowAnyMethod()
     .AllowAnyHeader());
 app.UseHttpsRedirection();
-
+ 
 app.UseAuthorization();
 
 // custom jwt auth middleware
