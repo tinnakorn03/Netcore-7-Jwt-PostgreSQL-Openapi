@@ -22,8 +22,8 @@ public class ContactRepository : IContactRepository
     {
         using var connection = _context.CreateConnection();
         var sql = """
-            INSERT INTO Contacts (Name, Email, Message, Date)
-            VALUES (@Name, @Email, @Message, @Date)
+            INSERT INTO Contacts (Name, Email, Phone_Number, Message, Date)
+            VALUES (@Name, @Email, @Phone_Number, @Message, @Date)
         """;
         await connection.ExecuteAsync(sql, model);
     }

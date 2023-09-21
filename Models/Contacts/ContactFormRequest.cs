@@ -10,8 +10,11 @@ public class ContactFormRequest
     [Required]
     public string? Email { get; set; }
 
-   [Required]
+    [Required]
     public string? Message { get; set; }
+
+    [Required]
+    public int? Phone_Number { get; set; }
  
     [DataType(DataType.Date)]
     public DateTime? Date { get; set; } 

@@ -65,6 +65,7 @@ public class DataContext
                     Name VARCHAR(255),
                     Email VARCHAR(255),
                     Message TEXT,
+                    Phone_Number INT,
                     Date DATE
                 );";
 
